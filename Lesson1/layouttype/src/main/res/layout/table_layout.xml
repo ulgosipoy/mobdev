@@ -13,6 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#3b08bd"
+            app:cornerRadius="3dp"
             android:text="BUTTON" />
 
         <TextView
@@ -27,7 +29,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BUTTON" />
+            android:text="BUTTON"
+            android:backgroundTint="#3b08bd"
+            app:cornerRadius="3dp" />
     </TableRow>
 
     <TableRow
@@ -39,7 +43,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BUTTON" />
+            android:text="BUTTON"
+            android:backgroundTint="#3b08bd"
+            app:cornerRadius="3dp" />
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -65,13 +71,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BUTTON" />
+            android:text="BUTTON"
+            android:backgroundTint="#3b08bd"
+            app:cornerRadius="3dp" />
 
         <Button
             android:id="@+id/button11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BUTTON" />
+            android:text="BUTTON"
+            android:backgroundTint="#3b08bd"
+            app:cornerRadius="3dp" />
     </TableRow>
 </TableLayout>
