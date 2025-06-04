@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="#5d5e5e"
+        android:text="New life for mirea activity!" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#c7c7c7"
+        android:textColor="#5d5e5e"
+        app:cornerRadius="3dp"
+        android:text="FIRST BUTTON" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#c7c7c7"
+        android:textColor="#5d5e5e"
+        app:cornerRadius="3dp"
+        android:text="SECOND BUTTON" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#c7c7c7"
+        android:textColor="#5d5e5e"
+        app:cornerRadius="3dp"
+        android:text="THIRD BUTTON" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#c7c7c7"
+        android:textColor="#5d5e5e"
+        app:cornerRadius="3dp"
+        android:text="FOURTH BUTTON" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#c7c7c7"
+        android:textColor="#5d5e5e"
+        app:cornerRadius="3dp"
+        android:text="FIFTH BUTTON" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#c7c7c7"
+        android:textColor="#5d5e5e"
+        app:cornerRadius="3dp"
+        android:text="SIXTH BUTTON" />
+</LinearLayout>
