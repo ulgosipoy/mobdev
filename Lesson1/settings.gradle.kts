@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Lesson1"
 include(":app")
- 
+include(":layouttype")
