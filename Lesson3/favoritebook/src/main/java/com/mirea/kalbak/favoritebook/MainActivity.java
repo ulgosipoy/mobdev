@@ -3,8 +3,10 @@ package com.mirea.kalbak.favoritebook;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
@@ -30,19 +32,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textViewUserBook = findViewById(R.id.textViewBook);
-        ActivityResultCallback<ActivityResult> callback = new ActivityResultCallback<ActivityResult>() {
-            @Override
-            public void onActivityResult(ActivityResult result) {
-                if (result.getResultCode() == Activity.RESULT_OK) {
-                    Intent data = result.getData();
-                    String userBook = data.getStringExtra(USER_MESSAGE);
-                    textViewUserBook.setText(userBook);
-                }
-            }
-        };
         activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
-                callback);
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        String userBook = result.getData().getStringExtra(USER_MESSAGE);
+                        textViewUserBook.setText(userBook);
+                    }
+                });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -52,9 +49,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getInfoAboutBook(View view) {
-        Intent intent = new Intent(this, SharerActivity.class);
-        intent.putExtra(BOOK_NAME_KEY, "Какая-то книга");
-        intent.putExtra(QUOTES_KEY, "Какая-то цитата");
-        activityResultLauncher.launch(intent);
+        try {
+            Intent intent = new Intent(this, SharerActivity.class);
+            intent.putExtra(BOOK_NAME_KEY, "Пример книги");
+            intent.putExtra(QUOTES_KEY, "Пример цитаты");
+            activityResultLauncher.launch(intent);
+        } catch (Exception e) {
+            Log.e("MainActivity", "Ошибка запуска SharerActivity", e);
+            Toast.makeText(this, "Ошибка открытия окна", Toast.LENGTH_SHORT).show();
+        }
     }
 }

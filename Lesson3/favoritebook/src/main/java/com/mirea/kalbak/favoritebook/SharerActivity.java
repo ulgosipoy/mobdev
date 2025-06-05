@@ -1,11 +1,15 @@
 package com.mirea.kalbak.favoritebook;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +18,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SharerActivity extends AppCompatActivity {
-    private TextView textView;
     private EditText editTextBookName;
     private EditText editTextQuote;
 
@@ -23,14 +26,15 @@ public class SharerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sharer);
+        Log.d("SharerActivity", "Активность успешно создана");
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            TextView ageView = findViewById(R.id.textViewBook);
-            String book_name = extras.getString(MainActivity.BOOK_NAME_KEY);
-            String quotes_name = extras.getString(MainActivity.QUOTES_KEY);
-            textView.setText(String.format("Моя любимая книга: %s и цитата %s",
-                    book_name, quotes_name));
+            TextView ageView = findViewById(R.id.textView3);
+            String bookName = extras.getString(MainActivity.BOOK_NAME_KEY, "");
+            String quote = extras.getString(MainActivity.QUOTES_KEY, "");
+            ageView.setText(String.format("Моя любимая книга: %s и цитата: %s",
+                    bookName, quote));
         }
 
         editTextBookName = findViewById(R.id.editTextBookName);
