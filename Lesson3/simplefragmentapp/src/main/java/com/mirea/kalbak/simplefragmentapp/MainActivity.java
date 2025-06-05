@@ -2,7 +2,6 @@ package com.mirea.kalbak.simplefragmentapp;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,26 +24,18 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
 
+    public void onClickFirstFragment(View view) {
         fragment1 = new FirstFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment1).commit();
+    }
+
+    public void onClickSecondFragment(View view) {
         fragment2 = new SecondFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
-
-        Button btnFirstFragment = (Button) findViewById(R.id.btnFirstFragment);
-        btnFirstFragment.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment1).commit();
-            }
-        });
-        Button btnSecondFragment = (Button) findViewById(R.id.btnSecondFragment);
-        btnSecondFragment.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                fragmentManager.beginTransaction().replace(R.id.fragmentContainerView,
-                        fragment2).commit();
-            }
-        });
-
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment2).commit();
     }
+
 }
