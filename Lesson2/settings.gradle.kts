@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Lesson2"
 include(":app")
 include(":activitylifecycle")
+include(":multiactivity")
