@@ -22,4 +22,14 @@
         android:name="com.mirea.kalbak.mireaproject.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_data"
+        android:name="com.mirea.kalbak.mireaproject.DataFragment"
+        android:label="Data"
+        tools:layout="@layout/fragment_data" />
+    <fragment
+        android:id="@+id/nav_webview"
+        android:name="com.mirea.kalbak.mireaproject.WebViewFragment"
+        android:label="Web Browser"
+        tools:layout="@layout/fragment_web_view" />
 </navigation>

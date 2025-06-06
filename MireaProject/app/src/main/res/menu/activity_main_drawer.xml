@@ -16,5 +16,14 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_data"
+            android:icon="@drawable/outline_info_24"
+            android:title="Data" />
+
+        <item
+            android:id="@+id/nav_webview"
+            android:icon="@drawable/baseline_web_24"
+            android:title="Web Browser" />
     </group>
 </menu>
